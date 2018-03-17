@@ -1,5 +1,6 @@
-# John Gauthier
-# Bubblesort array of 10 integers
+# Author: John Gauthier
+# Description: Bubble sort array of 10 integers, written in Y86
+# Sources: course/assignment material
 
 init:	
 	irmovl Stack, %esp  	# Set up stack pointer  

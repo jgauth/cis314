@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Calculates a sum, written in assembly
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 int sum(int from, int to) {

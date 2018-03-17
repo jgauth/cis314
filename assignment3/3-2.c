@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Reverse engineered IA32 code to create this C code
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 int decode(int x, int y, int z) {

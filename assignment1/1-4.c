@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Uses bitwise ops to check even bits for '1'
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 int even(unsigned int x) {

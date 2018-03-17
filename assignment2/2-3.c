@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Uses bitwise ops to compare two floats
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 int ge(float x, float y) {

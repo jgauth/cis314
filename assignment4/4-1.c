@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Given IA32 code create functionally equivalent C code
+// Sources: course/assignment material
+
 /*
 loop:
 	pushl %ebp           //save old %ebp

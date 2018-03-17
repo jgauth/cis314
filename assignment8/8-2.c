@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Simulates a 64B direct-mapped cache with 4B blocks
+// Sources: course/assignment material
+
 #include "stdio.h"
 #include "stdlib.h"
 

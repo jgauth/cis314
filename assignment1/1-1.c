@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Prints hex byte representation of variables
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 void printBytes(unsigned char *start, int len) {

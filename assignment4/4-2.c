@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Wrote a version of transpose that used the optimizations created by the compiler
+// Sources: course/assignment material
+
 /*
 .L3:
 	movl (%edx), %esi     //t = i

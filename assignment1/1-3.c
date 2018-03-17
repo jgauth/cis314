@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Uses bitwise ops to replace certain bytes of an unsigned int
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 unsigned int replace(unsigned int x, int i, unsigned char b) {

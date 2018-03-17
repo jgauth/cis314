@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Uses bitwise ops to return a bit-mask of the least significant n bits
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 int mask(int n) {

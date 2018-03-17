@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Uses bitwise ops to combine unsigned ints
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 unsigned int combine(unsigned int x, unsigned int y) {

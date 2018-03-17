@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Optimized Inner function with 4-way loop unrolling. Compares execution time.
+// Sources: course/assignment material
+
 #include <stdio.h>
 #include <time.h>
 

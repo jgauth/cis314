@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Create and do operations on an array
+// Sources: course/assignment material
+
 #include <stdio.h>
 #include <stdlib.h>
 

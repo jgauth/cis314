@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Uses bitwise ops to return specific bytes of an unsigned int
+// Sources: course/assignment material
+
 #include <stdio.h>
 
 unsigned int extract(unsigned int x, int i) {

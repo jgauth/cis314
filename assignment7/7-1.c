@@ -1,3 +1,7 @@
+// Author: John Gauthier
+// Description: Rewrote C code to minimize unnecessary function calls and multiplications
+// Sources: course/assignment material
+
 #include <stdio.h>
 #include <time.h>
 
