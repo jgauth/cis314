@@ -1,0 +1,7 @@
+1A.
+    There are a total of 1024 memory writes. There are 256 loop iterations and within each iteration there are 4 memory writes.
+
+1B.
+    The total number of memory writes that miss in the cache is 128. On the first iteration of the loop there is one miss and 3 hits. In the next iteration there are 4 hits. This pattern continues, meaning that for every 8 writes to memory, 1 will miss the cache.
+
+1C. The miss rate is 12.5%. 128 misses / 1024 writes = .125 * 100 = 12.5%.

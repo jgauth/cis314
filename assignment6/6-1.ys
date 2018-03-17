@@ -1,0 +1,108 @@
+# John Gauthier
+# Bubblesort array of 10 integers
+
+init:	
+	irmovl Stack, %esp  	# Set up stack pointer  
+	irmovl Stack, %ebp  	# Set up base pointer   
+	call Main				# Execute main program
+	halt					# Terminate program 
+
+# Array of 4 elements
+	.align 4 	
+array:	
+	.long 0x000a
+	.long 0x0001
+	.long 0x0007
+	.long 0x0003
+	.long 0x0004
+	.long 0x0005
+	.long 0x0006
+	.long 0x0002
+	.long 0x0008
+	.long 0x0009
+
+Main:	
+	pushl %ebp 		
+	rrmovl %esp,%ebp
+	irmovl $10,%eax	
+	pushl %eax				# Push 10
+	irmovl array,%edx
+	pushl %edx      		# Push array
+	call Sort				# Sort(array, 10)
+	rrmovl %ebp,%esp
+	popl %ebp
+	ret
+
+
+# void Sort(int *Start, int length)
+# based off of bubblesort implemented with do-while
+Sort:
+	pushl %ebp
+	rrmovl %esp,%ebp
+	mrmovl 8(%ebp),%ebx		# %ebx = array start
+	mrmovl 12(%ebp),%esi	# %esi = length
+Outer:
+	xorl %ecx,%ecx 			# %ecx = repeat = 0
+	xorl %edx,%edx			# %edx = i = 0
+	mrmovl 8(%ebp),%ebx		# reset  %ebx = array start
+	jmp Inner
+Inner:
+	mrmovl (%ebx),%eax		# %eax = a[i]
+	mrmovl 4(%ebx),%edi		# %edi = a[i+1]
+	subl %edi,%eax			# a[i] - a[i+1]
+	jg SwapSetup			# if a[i] > a[i+1] jump to swapSetup
+	jmp Inner2				# else jump to Inner2
+SwapSetup:
+	pushl %ecx
+	pushl %edx
+	rrmovl %ebx,%eax		# %eax = temp array pointer
+	pushl %eax				# push a[i]
+	irmovl $4,%edi
+	addl %edi,%eax			# increment %eax to next spot in array
+	pushl %eax				# push a[i+1]
+	call Swap 				# Swap a[i] and a[i+1]
+	popl %eax
+	popl %eax
+	popl %edx
+	popl %ecx
+	irmovl $1,%ecx 			# %ecx = repeat = 1
+	jmp Inner2
+Inner2:
+	mrmovl 12(%ebp),%esi	# reset %esi = length
+	irmovl $4,%eax
+	addl %eax,%ebx			#increment %ebx to next spot in array
+	irmovl $1,%eax
+	addl %eax,%edx			# i += 1
+	subl %eax,%esi			# length = length - 1
+	subl %edx,%esi			# length = length - i
+	jg Inner 				# if (i < length - 1) jump to Inner
+	andl %ecx,%ecx
+	je End					# elif !(repeat) jump to End
+	jmp Outer 				# else jump to Outer
+End:
+	rrmovl %ebp,%esp
+	popl %ebp
+	ret
+
+
+# int Swap(int *xp, int *yp)
+Swap:
+    pushl %ebp
+    rrmovl %esp, %ebp
+    pushl %ebx              # push %ebx
+
+    mrmovl 8(%ebp), %ecx    # xp in %ecx
+    mrmovl 12(%ebp), %edx   # yp in %edx
+
+    mrmovl (%ecx), %eax     # *xp in %eax (t0) 
+    mrmovl (%edx), %ebx     # *yp in %ebx (t1)
+
+    rmmovl %eax, (%edx)     # t0 in yp
+    rmmovl %ebx, (%ecx)     # t1 in xp
+    
+    popl %ebx               # pop %ebx
+    popl %ebp
+    ret
+
+    .pos 0x200
+Stack:
